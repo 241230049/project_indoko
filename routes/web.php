@@ -11,3 +11,4 @@ Route::get('/kontak', [KontakController::class, 'index']);
 Route::get('/profil', [ProfilController::class, 'index']);
 
 Route::resource('campaign', CampaignController::class);
+
