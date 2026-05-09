@@ -13,7 +13,7 @@ class CampaignController extends Controller
     }
 
     public function create() {
-        return view('campaign.create'); // Anda perlu buat file create.blade.php
+        return view('campaign.create');
     }
 
     public function store(Request $request)
@@ -31,7 +31,7 @@ class CampaignController extends Controller
 
     public function edit($id)
     {
-    // Mengambil data berdasarkan ID (Sesuai materi hal 15)
+    
     $campaign = Campaign::findOrFail($id); 
         return view('campaign.edit', compact('campaign'));
     }
