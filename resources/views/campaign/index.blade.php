@@ -4,7 +4,7 @@
 <div class="overflow-x-auto p-6"> 
     <div class="flex justify-between mb-4">
         <h1 class="text-xl font-bold">Daftar Campaign</h1>
-        <a href="/campaign/create" class="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600">
+        <a href="/campaign/create" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">
             + Tambah Campaign
         </a>
     </div>

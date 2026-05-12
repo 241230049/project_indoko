@@ -43,7 +43,7 @@
 
         <div class="flex items-center gap-3 pt-4 mt-6 border-t">
             <button type="submit"
-                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-200">
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-200">
                 Simpan Campaign
             </button>
             <a href="{{ route('campaign.index') }}"

@@ -11,6 +11,6 @@
             <a href="/profil" class="text-gray-700 hover:text-green-600">Profil</a>
         </nav>
 
-        <a href="/donasi" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-400">Donasi Sekarang</a>
+        <a href="/" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-400">Donasi Sekarang</a>
     </div>
 </header>
