@@ -9,11 +9,11 @@ class DocumentationFileController extends Controller
 {
     public function index()
     {
-        // Mengambil data terbaru agar muncul paling atas
         $files = DocumentationFile::latest()->get();
+
         return view('documentation_files', compact('files'));
     }
-    
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -22,9 +22,9 @@ class DocumentationFileController extends Controller
         ]);
 
         $file = $request->file('attachment');
-        // Simpan ke folder public/documentation_files
-        $path = $file->store('documentation_files', 'public');
         $extension = strtolower($file->getClientOriginalExtension());
+        $folder = in_array($extension, ['png', 'jpg', 'jpeg']) ? 'images' : 'documents';
+        $path = $file->store($folder, 'public');
 
         DocumentationFile::create([
             'title' => $validated['title'],
