@@ -21,15 +21,19 @@
         <tbody>
             @foreach ($campaigns as $c)
             <tr class="border-t hover:bg-gray-50">
-                <td class="p-2"> {{ $c->title }} </td>
-                <td> Rp {{ number_format($c->target_donation) }} </td>
-                <td> Rp {{ number_format($c->collected_donation) }} </td>
-                <td class="p-2 flex justify-center gap-4">
+                <td class="p-2 align-middle"> {{ $c->title }} </td>
+                <td class="align-middle"> Rp {{ number_format($c->target_donation) }} </td>
+                <td class="align-middle"> Rp {{ number_format($c->collected_donation) }} </td>
+                <td class="p-2 flex justify-center items-center gap-4">
+                    <a href="{{ route('donasi.index', $c->id) }}" class="text-green-600 hover:underline font-bold">
+                        Donasi
+                    </a>
+
                     <a href="/campaign/{{ $c->id }}/edit" class="text-blue-500 hover:underline font-semibold">
                         Edit
                     </a>
 
-                    <form action="/campaign/{{ $c->id }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                    <form action="/campaign/{{ $c->id }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')" class="inline m-0">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-500 hover:underline font-semibold">

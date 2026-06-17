@@ -25,14 +25,17 @@ class CampaignController extends Controller
             'deadline' => 'required|date',
         ]);
 
-        \App\Models\Campaign::create($validated);
+        // LOGIKA PENYEMPURNAAN: Saat campaign baru dibuat, 
+        // pastikan nilai 'collected_donation' (Terkumpul) otomatis dimulai dari angka 0
+        $validated['collected_donation'] = 0;
+
+        Campaign::create($validated);
         return redirect()->route('campaign.index')->with('success', 'Campaign berhasil dibuat!');
     }
 
     public function edit($id)
     {
-    
-    $campaign = Campaign::findOrFail($id); 
+        $campaign = Campaign::findOrFail($id); 
         return view('campaign.edit', compact('campaign'));
     }
 
@@ -51,6 +54,7 @@ class CampaignController extends Controller
 
         return redirect()->route('campaign.index')->with('success', 'Data berhasil diupdate!');
     }
+
     public function destroy($id) {
         $campaign = Campaign::findOrFail($id);
         $campaign->delete();
